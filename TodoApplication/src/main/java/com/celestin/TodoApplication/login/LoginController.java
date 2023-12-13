@@ -1,4 +1,4 @@
-package com.celestin.TodoApplication;
+package com.celestin.TodoApplication.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
