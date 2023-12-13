@@ -3,97 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Celestin&apos;s website</title>
-
-    <!-- External CSS link (you can replace this with your own stylesheet link) -->
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Login Page</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #495057;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        header {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 1em 0;
-            text-align: center;
+        .login-container {
+            width: 100%;
+            max-width: 400px;
         }
 
-        nav {
-            background-color: #e3f2fd;
-            padding: 0.5em;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #007bff;
-            margin: 0 1em;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 1em;
-            background-color: #ffffff;
+        .login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 1em 0;
-            text-align: center;
+        h1 {
+            color: #007bff;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .links {
+            margin-top: 10px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to Celestin&apos;s website</h1>
-    </header>
+    <div class="login-container">
+        <form action="/login" method="post" class="login-form">
+            <h1>Celestin&apos;s App</h1>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <section id="home">
-        <h2>Welcome to Celestin&apos;s website</h2>
-        <p>Come here and share your thoughts </p>
-    </section>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>This is a platform where anyone can share their thoughts on anything</p>
-    </section>
+            <button type="submit">Login</button>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Celestin ,221B Baker Street.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your Super Website. All rights reserved.</p>
-    </footer>
-
-    <!-- Add your JavaScript scripts or external script links here -->
+            <div class="links">
+                <a href="#">Forgot Password?</a> | <a href="#">Create New Account</a>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
