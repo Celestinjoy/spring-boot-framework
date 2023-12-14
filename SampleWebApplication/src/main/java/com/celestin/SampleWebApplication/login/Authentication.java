@@ -1,4 +1,4 @@
-package com.celestin.SampleWebApplication;
+package com.celestin.SampleWebApplication.login;
 
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,4 @@
-<html>
-	<head>
-		<title> Welcome Page</title>
-	</head>
-	<body>
-		<div>Welcome to the celestin&apos;s website ${name}</div>
-	</body>
-</html>
+		<div class="container">
+			<h1>Welcome ${name}</h1>
+			<a href="list">Manage</a> your todos
+		</div>

@@ -71,7 +71,7 @@
 
     <div class="login-container">
         <form action="/login" method="post" class="login-form">
-            <h1>Celestin&apos;s App</h1>
+            <h1>Celestin&apos;s Fashion Store</h1>
 
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>

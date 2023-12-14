@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Celestin&apos;s App</title>
+    <title> Celestin&apos;s Fashion Store</title>
 
     <!-- External CSS link (you can replace this with your own stylesheet link) -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
 
     <style>
         body {
@@ -55,7 +55,7 @@
 <body>
 
     <header>
-        <h1>Welcome to Celestin&apos;s App ${name}</h1>
+        <h1>Hi ${name}, Welcome to Celestin&apos;s Fashion Store </h1>
     </header>
 
     <nav>
@@ -66,22 +66,24 @@
     </nav>
 
     <section id="home">
-        <h2>Celestin&apos;s App</h2>
-        <p>Come here and share your thoughts </p>
+        <h2>Celestin&apos;s Fashion Store</h2>
+        <p>Where kerala comes to shop </p>
+    </section>
+
+    <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <a href="men" class="btn btn-success">MEN </a>
+                <a href="women" class="btn btn-success">WOMEN </a>
+                <a href="kids" class="btn btn-success">KIDS </a>
+                <a href="babies" class="btn btn-success">BABIES </a>
+
+            </ul>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>This is a platform where anyone can share their thoughts on anything</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-        </ul>
+        <p>25 years of Excellence in Fashion</p>
     </section>
 
     <section id="contact">
@@ -94,6 +96,8 @@
     </footer>
 
     <!-- Add your JavaScript scripts or external script links here -->
+    <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
 
 </body>
 </html>
