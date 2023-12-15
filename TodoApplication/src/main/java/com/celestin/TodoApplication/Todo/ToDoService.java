@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public class ToDoService {
     private static List<ToDo> toDos = new ArrayList<>();
+    private static int todoCount= 3;
 
     static {
         toDos.add(new ToDo(1,"celestin","study azure", LocalDate.now().plusYears(1),false));
@@ -17,5 +18,10 @@ public class ToDoService {
 
     public  List<ToDo> findByUserName(String userName) {
         return toDos;
+    }
+
+    public void addTodo(String username,String description,LocalDate targetdate,boolean done) {
+        todoCount+=1;
+        toDos.add(new ToDo(todoCount,username,description,targetdate,done));
     }
 }
