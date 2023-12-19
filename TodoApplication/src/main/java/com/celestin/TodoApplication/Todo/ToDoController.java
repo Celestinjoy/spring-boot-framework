@@ -1,11 +1,10 @@
 package com.celestin.TodoApplication.Todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.BindingResult;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,15 +13,16 @@ import java.util.List;
 @SessionAttributes("name")
 public class ToDoController {
 
-    private ToDoService toDoService;
+    private ToDoService todoService;
 
-    public ToDoController(ToDoService toDoService) {
-        this.toDoService = toDoService;
+    public ToDoController(ToDoService todoService) {
+        this.todoService = todoService;
     }
 
     @RequestMapping(value ="list",method = RequestMethod.GET)
     public String returnList(ModelMap model) {
-        List<ToDo> todos = toDoService.findByUserName("celestin");
+        String name =(String) model.get("name");
+        List<ToDo> todos = todoService.findByUserName(name);
         model.put("todos",todos);
         return "list";
     }
@@ -36,9 +36,18 @@ public class ToDoController {
     }
 
     @RequestMapping(value ="add-todo",method = RequestMethod.POST)
-    public String addnewtodo(ModelMap model,ToDo todo) {
+    public String addnewtodo(ModelMap model, @Valid @ModelAttribute("todo")ToDo todo, BindingResult result) {
+        if(result.hasErrors()) {
+            return "todo";
+        }
         String name =(String) model.get("name");
-        toDoService.addTodo(name,todo.getDescription(), LocalDate.now().plusYears(1),false);
+        todoService.addTodo(name,todo.getDescription(), LocalDate.now().plusYears(1),false);
+        return "redirect:list";
+    }
+
+    @RequestMapping(value ="delete-todo",method = RequestMethod.GET)
+    public String deleteToDo(@RequestParam int id) {
+        todoService.deleteById(id);
         return "redirect:list";
     }
 }

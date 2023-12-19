@@ -1,10 +1,13 @@
 package com.celestin.TodoApplication.Todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class ToDo {
     private int id;
     private String userName;
+    @Size(min=10,message = "Enter atleast ten characters")
     private String description;
     private LocalDate targetDate;
     private boolean done;
