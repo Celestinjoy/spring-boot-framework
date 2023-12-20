@@ -7,20 +7,25 @@ import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 @Entity
-public class ToDo {
+public class Todo {
+
+
+    public Todo() {
+
+    }
 
     @Id
     @GeneratedValue
     private int id;
-    private String userName;
+    private String username;
     @Size(min=10,message = "Enter atleast ten characters")
     private String description;
     private LocalDate targetDate;
     private boolean done;
 
-    public ToDo(int id, String userName, String description, LocalDate targetDate, boolean done) {
+    public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.description = description;
         this.targetDate = targetDate;
         this.done = done;
@@ -34,12 +39,12 @@ public class ToDo {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDescription() {
@@ -68,9 +73,9 @@ public class ToDo {
 
     @Override
     public String toString() {
-        return "ToDo{" +
+        return "Todo{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", userName='" + username + '\'' +
                 ", description='" + description + '\'' +
                 ", targetDate=" + targetDate +
                 ", done=" + done +

@@ -9,7 +9,7 @@ import org.springframework.validation.BindingResult;
 import java.time.LocalDate;
 import java.util.List;
 
-@Controller
+//@Controller
 @SessionAttributes("name")
 public class ToDoController {
 
@@ -22,7 +22,7 @@ public class ToDoController {
     @RequestMapping(value ="list",method = RequestMethod.GET)
     public String returnList(ModelMap model) {
         String name =(String) model.get("name");
-        List<ToDo> todos = todoService.findByUserName(name);
+        List<Todo> todos = todoService.findByUserName(name);
         model.put("todos",todos);
         return "list";
     }
@@ -30,13 +30,13 @@ public class ToDoController {
     @RequestMapping(value ="add-todo",method = RequestMethod.GET)
     public String addtodo(ModelMap model) {
         String name =(String) model.get("name");
-        ToDo todo = new ToDo(0, name, "", LocalDate.now().plusYears(1), false);
+        Todo todo = new Todo(0, name, "", LocalDate.now().plusYears(1), false);
         model.put("todo", todo);
         return "todo";
     }
 
     @RequestMapping(value ="add-todo",method = RequestMethod.POST)
-    public String addnewtodo(ModelMap model, @Valid @ModelAttribute("todo")ToDo todo, BindingResult result) {
+    public String addnewtodo(ModelMap model, @Valid @ModelAttribute("todo") Todo todo, BindingResult result) {
         if(result.hasErrors()) {
             return "todo";
         }
