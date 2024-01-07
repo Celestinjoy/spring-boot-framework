@@ -1,4 +1,4 @@
-package com.celestin.movies;
+package com.celestin.movies.movie;
 
 import java.util.List;
 
@@ -14,9 +14,12 @@ public class Movie {
     private String trailerLink;
     private String poster;
 
-    private List<String> genres;
+    private String genres;
 
-    public Movie(Integer id, Integer imdbID, String title, String releaseDate, String trailerLink, String poster, List<String> genres) {
+    private String reviews;
+
+
+    public Movie(Integer id, Integer imdbID, String title, String releaseDate, String trailerLink, String poster, String genres, String reviews) {
         this.id = id;
         this.imdbID = imdbID;
         this.title = title;
@@ -24,6 +27,7 @@ public class Movie {
         this.trailerLink = trailerLink;
         this.poster = poster;
         this.genres = genres;
+        this.reviews = reviews;
     }
 
     public Integer getId() {
@@ -74,12 +78,20 @@ public class Movie {
         this.poster = poster;
     }
 
-    public List<String> getGenres() {
+    public String getGenres() {
         return genres;
     }
 
-    public void setGenres(List<String> genres) {
+    public void setGenres(String genres) {
         this.genres = genres;
+    }
+
+    public String getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(String reviews) {
+        this.reviews = reviews;
     }
 
     @Override
